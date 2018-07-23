@@ -7,9 +7,12 @@ class ContainerViewController: UIViewController {
     
     let contentNavController : UINavigationController
     let mainScreenVC: MainScreenViewController
+    let middleScreenVC: MiddleScreenViewController
+    let finalVC: FinalViewController
     init() {
         self.mainScreenVC = MainScreenViewController()
-        
+        self.middleScreenVC = MiddleScreenViewController()
+        self.finalVC = FinalViewController()
         contentNavController = UINavigationController(rootViewController: mainScreenVC)
         super.init(nibName: nil, bundle: nil)
     }
@@ -20,21 +23,31 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        contentNavController.isNavigationBarHidden = true
         setUpChildViewController(viewController: contentNavController, containerView: contentContainerView)
-        // how do i set the delegate?
+        contentNavController.viewControllers.append(contentsOf: [finalVC, middleScreenVC])
         mainScreenVC.delegate = self
+        middleScreenVC.delegate = self
     }
 }
 
 extension ContainerViewController: MainScreenViewControllerDelegate {
     func proceed(_ controller: MainScreenViewController) {
+        contentNavController.pushViewController(MiddleScreenViewController(), animated: true)
+    }
+}
+
+extension ContainerViewController: MiddleScreenViewControllerDelegate {
+    func proceed() {
         contentNavController.pushViewController(FinalViewController(), animated: true)
+    }
+    
+    func home() {
+        contentNavController.popToRootViewController(animated: true)
     }
     
     
 }
-
 extension UIViewController {
     func setUpChildViewController(viewController: UIViewController, containerView: UIView) {
         addChildViewController(viewController)

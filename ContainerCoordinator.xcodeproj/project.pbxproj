@@ -11,6 +11,8 @@
 		EE402E8A2106524D000AFF55 /* MainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE402E882106524D000AFF55 /* MainScreenViewController.xib */; };
 		EE402E8D21065B3B000AFF55 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE402E8B21065B3B000AFF55 /* FinalViewController.swift */; };
 		EE402E8E21065B3B000AFF55 /* FinalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE402E8C21065B3B000AFF55 /* FinalViewController.xib */; };
+		EE402E91210660C9000AFF55 /* MiddleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE402E8F210660C9000AFF55 /* MiddleScreenViewController.swift */; };
+		EE402E92210660C9000AFF55 /* MiddleScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE402E90210660C9000AFF55 /* MiddleScreenViewController.xib */; };
 		EEF0318121060F9D00693D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0318021060F9D00693D56 /* AppDelegate.swift */; };
 		EEF0318821060F9F00693D56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF0318721060F9F00693D56 /* Assets.xcassets */; };
 		EEF0318B21060F9F00693D56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF0318921060F9F00693D56 /* LaunchScreen.storyboard */; };
@@ -24,6 +26,8 @@
 		EE402E882106524D000AFF55 /* MainScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenViewController.xib; sourceTree = "<group>"; };
 		EE402E8B21065B3B000AFF55 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		EE402E8C21065B3B000AFF55 /* FinalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalViewController.xib; sourceTree = "<group>"; };
+		EE402E8F210660C9000AFF55 /* MiddleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleScreenViewController.swift; sourceTree = "<group>"; };
+		EE402E90210660C9000AFF55 /* MiddleScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiddleScreenViewController.xib; sourceTree = "<group>"; };
 		EEF0317D21060F9D00693D56 /* ContainerCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF0318021060F9D00693D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF0318721060F9F00693D56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				EE402E882106524D000AFF55 /* MainScreenViewController.xib */,
 				EE402E8B21065B3B000AFF55 /* FinalViewController.swift */,
 				EE402E8C21065B3B000AFF55 /* FinalViewController.xib */,
+				EE402E8F210660C9000AFF55 /* MiddleScreenViewController.swift */,
+				EE402E90210660C9000AFF55 /* MiddleScreenViewController.xib */,
 			);
 			path = ContainerCoordinator;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF0318B21060F9F00693D56 /* LaunchScreen.storyboard in Resources */,
+				EE402E92210660C9000AFF55 /* MiddleScreenViewController.xib in Resources */,
 				EE402E8A2106524D000AFF55 /* MainScreenViewController.xib in Resources */,
 				EEF0318821060F9F00693D56 /* Assets.xcassets in Resources */,
 				EEF031972106118A00693D56 /* ContainerViewController.xib in Resources */,
@@ -154,6 +161,7 @@
 			files = (
 				EE402E8D21065B3B000AFF55 /* FinalViewController.swift in Sources */,
 				EEF0319321060FF100693D56 /* AppCoordinator.swift in Sources */,
+				EE402E91210660C9000AFF55 /* MiddleScreenViewController.swift in Sources */,
 				EE402E892106524D000AFF55 /* MainScreenViewController.swift in Sources */,
 				EEF031962106118A00693D56 /* ContainerViewController.swift in Sources */,
 				EEF0318121060F9D00693D56 /* AppDelegate.swift in Sources */,
