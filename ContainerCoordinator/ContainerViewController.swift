@@ -6,8 +6,9 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var contentContainerView: UIView!
     
     let contentNavController : UINavigationController
+    let mainScreenVC: MainScreenViewController
     init() {
-        let mainScreenVC = MainScreenViewController()
+        self.mainScreenVC = MainScreenViewController()
         
         contentNavController = UINavigationController(rootViewController: mainScreenVC)
         super.init(nibName: nil, bundle: nil)
@@ -19,11 +20,20 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpChildViewController(viewController: contentNavController, containerView: contentContainerView)
+        // how do i set the delegate?
+        mainScreenVC.delegate = self
     }
 }
 
+extension ContainerViewController: MainScreenViewControllerDelegate {
+    func proceed(_ controller: MainScreenViewController) {
+        contentNavController.pushViewController(FinalViewController(), animated: true)
+    }
+    
+    
+}
 
 extension UIViewController {
     func setUpChildViewController(viewController: UIViewController, containerView: UIView) {
