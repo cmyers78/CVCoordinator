@@ -4,7 +4,7 @@ import UIKit
 class AppCoordinator {
     
     private unowned let window: UIWindow
-    private lazy var containerViewController = ContainerViewController(delegate : self)
+    private lazy var containerViewController = ContainerViewController()
     
     init(window: UIWindow) {
         self.window = window 
@@ -14,12 +14,4 @@ class AppCoordinator {
         window.rootViewController = containerViewController
         window.makeKeyAndVisible()
     }
-}
-
-extension AppCoordinator: ContainerViewControllerDelegate {
-    func containerViewControllerDidPressButton(_ controller: ContainerViewController) {
-        print("I got pressed.")
-    }
-    
-    
 }

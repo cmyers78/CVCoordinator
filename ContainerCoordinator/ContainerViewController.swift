@@ -1,16 +1,15 @@
 import UIKit
 
-protocol ContainerViewControllerDelegate: class {
-    func containerViewControllerDidPressButton(_ controller: ContainerViewController)
-}
+
 
 class ContainerViewController: UIViewController {
     @IBOutlet weak var contentContainerView: UIView!
     
-    weak var delegate : ContainerViewControllerDelegate?
-    
-    init(delegate : ContainerViewControllerDelegate) {
-        self.delegate = delegate
+    let contentNavController : UINavigationController
+    init() {
+        let mainScreenVC = MainScreenViewController()
+        
+        contentNavController = UINavigationController(rootViewController: mainScreenVC)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -20,8 +19,26 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIView.animate(withDuration: 4.0) {
-            [weak self] in  self?.contentContainerView.backgroundColor = .green
-        }
+
+        setUpChildViewController(viewController: contentNavController, containerView: contentContainerView)
+    }
+}
+
+
+extension UIViewController {
+    func setUpChildViewController(viewController: UIViewController, containerView: UIView) {
+        addChildViewController(viewController)
+        
+        containerView.addSubview(viewController.view)
+        
+        let childView = viewController.view
+        childView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v": childView!])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[v]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v": childView!])
+        containerView.addConstraints(hConstraints)
+        containerView.addConstraints(vConstraints)
+        
+        viewController.didMove(toParentViewController: self)
     }
 }
