@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ContainerCoordinator
-//
-//  Created by Chris Myers on 7/23/18.
-//  Copyright © 2018 CM. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

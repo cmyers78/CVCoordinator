@@ -1,11 +1,3 @@
-//
-//  ContainerViewController.swift
-//  ContainerCoordinator
-//
-//  Created by Chris Myers on 7/23/18.
-//  Copyright © 2018 CM. All rights reserved.
-//
-
 import UIKit
 
 protocol ContainerViewControllerDelegate: class {
@@ -28,8 +20,8 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentContainerView.backgroundColor = .green
-        
-        // Do any additional setup after loading the view.
+        UIView.animate(withDuration: 4.0) {
+            [weak self] in  self?.contentContainerView.backgroundColor = .green
+        }
     }
 }
